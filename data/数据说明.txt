@@ -1,0 +1,23 @@
+TIMESTAMP,NEE_VUT_REF,SW_IN_F,NETRAD,TA_F_MDS,VPD_F_MDS,RH,SWC_F_MDS_1,TS_F_MDS_1
+
+NEE_VUT_REF = co2_flux
+
+SW_IN_F = rg_f
+
+NETRAD = rn_1_1_1
+
+TA_F_MDS = ta_1_2_1
+
+VPD_F_MDS = vpd
+
+SWC_F_MDS_1 = swc_1_1_1 
+
+TS_F_MDS_1 = ts_1_1_1
+
+select record_time,rg_f,rn_1_1_1_threshold_limit_f as rn
+     ,ta_1_2_1_threshold_limit_f as ta
+     ,vpd_threshold_limit_f as vpd
+     ,swc_1_1_1_threshold_limit_f as swc,
+      ts_1_1_1_threshold_limit_f as ts
+from QC_shisanling_flux_0191db0443c1
+where record_time like '2023%';
